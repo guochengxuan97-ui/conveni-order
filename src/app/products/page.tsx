@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Product, ProductCategory, MarkdownRule } from '@/lib/types';
 
 const CATEGORIES: ProductCategory[] = [
@@ -70,12 +70,43 @@ function productToForm(p: Product): FormState {
   };
 }
 
+async function resizeAndEncode(file: File): Promise<{ base64: string; mimeType: string }> {
+  return new Promise((resolve) => {
+    const img = new window.Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const MAX = 1120;
+      let { width, height } = img;
+      if (width > MAX || height > MAX) {
+        if (width >= height) { height = Math.round(height * MAX / width); width = MAX; }
+        else { width = Math.round(width * MAX / height); height = MAX; }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = width; canvas.height = height;
+      canvas.getContext('2d')!.drawImage(img, 0, 0, width, height);
+      URL.revokeObjectURL(url);
+      resolve({ base64: canvas.toDataURL('image/jpeg', 0.85).split(',')[1], mimeType: 'image/jpeg' });
+    };
+    img.src = url;
+  });
+}
+
 export default function ProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [editProduct, setEditProduct] = useState<Product | null>(null);
   const [form, setForm] = useState<FormState>(defaultForm);
   const [saving, setSaving] = useState(false);
+
+  // Scan state
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [showScanModal, setShowScanModal] = useState(false);
+  const [scanStep, setScanStep] = useState<'select' | 'preview' | 'confirm'>('select');
+  const [scanImageUrl, setScanImageUrl] = useState<string | null>(null);
+  const [scanImageData, setScanImageData] = useState<{ base64: string; mimeType: string } | null>(null);
+  const [scanLoading, setScanLoading] = useState(false);
+  const [scanError, setScanError] = useState<string | null>(null);
+  const [scanForm, setScanForm] = useState<FormState>(defaultForm);
 
   useEffect(() => { fetchProducts(); }, []);
 
@@ -152,19 +183,89 @@ export default function ProductsPage() {
     }));
   }
 
+  // --- Scan handlers ---
+  function openScanModal() {
+    setScanStep('select');
+    setScanImageUrl(null);
+    setScanImageData(null);
+    setScanError(null);
+    setShowScanModal(true);
+  }
+
+  async function handleScanFileSelect(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setScanImageUrl(URL.createObjectURL(file));
+    setScanImageData(await resizeAndEncode(file));
+    setScanStep('preview');
+    e.target.value = '';
+  }
+
+  async function handleScan() {
+    if (!scanImageData) return;
+    setScanLoading(true);
+    setScanError(null);
+    try {
+      const res = await fetch('/api/scan-product', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(scanImageData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? '読み取り失敗');
+      setScanForm({
+        ...defaultForm,
+        name: data.name ?? '',
+        category: data.category ?? '弁当',
+        price: data.price != null ? String(data.price) : '',
+        shelfLife: data.shelfLife ?? 1,
+      });
+      setScanStep('confirm');
+    } catch (err) {
+      setScanError(err instanceof Error ? err.message : '読み取りに失敗しました');
+    } finally {
+      setScanLoading(false);
+    }
+  }
+
+  async function handleScanSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSaving(true);
+    await fetch('/api/products', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...scanForm,
+        price: scanForm.price !== '' ? Number(scanForm.price) : undefined,
+        cost: scanForm.cost !== '' ? Number(scanForm.cost) : undefined,
+      }),
+    });
+    setSaving(false);
+    setShowScanModal(false);
+    fetchProducts();
+  }
+
   return (
     <div className="space-y-5">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-gray-800">商品マスタ管理</h1>
-        <button
-          onClick={openNew}
-          className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
-        >
-          + 商品追加
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={openScanModal}
+            className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors flex items-center gap-1.5"
+          >
+            📷 写真から登録
+          </button>
+          <button
+            onClick={openNew}
+            className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
+          >
+            + 商品追加
+          </button>
+        </div>
       </div>
 
-      {/* Modal */}
+      {/* Manual entry modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-y-auto">
           <div className="bg-white rounded-2xl p-6 w-full max-w-lg shadow-xl my-4">
@@ -173,7 +274,6 @@ export default function ProductsPage() {
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
 
-              {/* 基本情報 */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">商品名</label>
                 <input
@@ -222,7 +322,6 @@ export default function ProductsPage() {
                 </div>
               </div>
 
-              {/* 発注許容範囲 */}
               <div className="border border-gray-100 rounded-xl p-3 space-y-3 bg-gray-50">
                 <div className="text-xs font-semibold text-gray-600 uppercase tracking-wide">発注許容範囲</div>
                 <div className="grid grid-cols-2 gap-3">
@@ -247,7 +346,6 @@ export default function ProductsPage() {
                 </div>
               </div>
 
-              {/* デリ設定 */}
               <div className="border border-gray-100 rounded-xl p-3 space-y-3 bg-gray-50">
                 <div className="text-xs font-semibold text-gray-600 uppercase tracking-wide">デリ・納品設定</div>
                 <label className="flex items-center gap-2 cursor-pointer">
@@ -275,7 +373,6 @@ export default function ProductsPage() {
                 )}
               </div>
 
-              {/* 発注修正期間 */}
               <div className="border border-gray-100 rounded-xl p-3 space-y-3 bg-gray-50">
                 <div className="text-xs font-semibold text-gray-600 uppercase tracking-wide">発注修正期間</div>
                 <label className="flex items-center gap-2 cursor-pointer">
@@ -300,7 +397,6 @@ export default function ProductsPage() {
                 )}
               </div>
 
-              {/* 価格（オプション） */}
               <div className="border border-gray-100 rounded-xl p-3 space-y-3 bg-gray-50">
                 <div className="text-xs font-semibold text-gray-600 uppercase tracking-wide">価格（粗利計算用・任意）</div>
                 <div className="grid grid-cols-2 gap-3">
@@ -327,7 +423,6 @@ export default function ProductsPage() {
                 </div>
               </div>
 
-              {/* 値下げルール */}
               <div className="border border-gray-100 rounded-xl p-3 space-y-3 bg-gray-50">
                 <div className="text-xs font-semibold text-gray-600 uppercase tracking-wide">値下げルール</div>
                 {form.markdownRules.length === 0 && (
@@ -389,12 +484,161 @@ export default function ProductsPage() {
         </div>
       )}
 
+      {/* Scan modal — bottom sheet */}
+      {showScanModal && (
+        <div className="fixed inset-0 bg-black/60 flex items-end justify-center z-50">
+          <div className="bg-white rounded-t-3xl w-full max-w-lg shadow-2xl max-h-[92vh] flex flex-col">
+            <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-gray-100 shrink-0">
+              <h2 className="text-lg font-bold text-gray-800">📷 写真から商品登録</h2>
+              <button
+                onClick={() => setShowScanModal(false)}
+                className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="overflow-y-auto flex-1 px-6 py-5 space-y-4">
+
+              {/* Step: select */}
+              {scanStep === 'select' && (
+                <>
+                  <p className="text-sm text-gray-500 text-center">
+                    商品パッケージを撮影、またはギャラリーから選択してください
+                  </p>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handleScanFileSelect}
+                  />
+                  <button
+                    onClick={() => fileInputRef.current?.click()}
+                    className="w-full py-10 rounded-2xl border-2 border-dashed border-blue-300 bg-blue-50 text-center text-blue-700 hover:bg-blue-100 active:bg-blue-200 transition-colors"
+                  >
+                    <div className="text-6xl mb-3">📷</div>
+                    <div className="text-lg font-bold">カメラ / ギャラリー</div>
+                    <div className="text-sm text-blue-400 mt-1">タップして選択</div>
+                  </button>
+                </>
+              )}
+
+              {/* Step: preview */}
+              {scanStep === 'preview' && scanImageUrl && (
+                <>
+                  <img
+                    src={scanImageUrl}
+                    alt="選択した画像"
+                    className="w-full rounded-xl object-contain max-h-64 bg-gray-100"
+                  />
+                  {scanError && (
+                    <div className="text-sm text-red-600 bg-red-50 rounded-xl p-3">{scanError}</div>
+                  )}
+                  <button
+                    onClick={handleScan}
+                    disabled={scanLoading}
+                    className="w-full py-4 rounded-xl bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 active:bg-blue-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                  >
+                    {scanLoading ? (
+                      <>
+                        <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        読み取り中...
+                      </>
+                    ) : (
+                      'AI で商品情報を読み取る'
+                    )}
+                  </button>
+                  <button
+                    onClick={() => { setScanStep('select'); setScanError(null); }}
+                    className="w-full py-3 rounded-xl border border-gray-200 text-gray-600 font-medium hover:bg-gray-50"
+                  >
+                    撮り直す
+                  </button>
+                </>
+              )}
+
+              {/* Step: confirm */}
+              {scanStep === 'confirm' && (
+                <>
+                  <div className="bg-green-50 border border-green-200 rounded-xl p-3 text-sm text-green-700 flex items-start gap-2">
+                    <span className="shrink-0">✅</span>
+                    <span>読み取り完了。内容を確認・修正してから登録してください。</span>
+                  </div>
+                  <form onSubmit={handleScanSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">商品名</label>
+                      <input
+                        type="text"
+                        value={scanForm.name}
+                        onChange={(e) => setScanForm({ ...scanForm, name: e.target.value })}
+                        required
+                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">カテゴリ</label>
+                      <select
+                        value={scanForm.category}
+                        onChange={(e) => setScanForm({ ...scanForm, category: e.target.value as ProductCategory })}
+                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      >
+                        {CATEGORIES.map((cat) => (
+                          <option key={cat} value={cat}>{CATEGORY_ICONS[cat]} {cat}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">売価（円）</label>
+                        <input
+                          type="number" min="0"
+                          value={scanForm.price}
+                          placeholder="例: 498"
+                          onChange={(e) => setScanForm({ ...scanForm, price: e.target.value })}
+                          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">賞味期限（日）</label>
+                        <input
+                          type="number" min="1"
+                          value={scanForm.shelfLife}
+                          onChange={(e) => setScanForm({ ...scanForm, shelfLife: Math.max(1, parseInt(e.target.value) || 1) })}
+                          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex gap-3 pt-1">
+                      <button
+                        type="submit"
+                        disabled={saving}
+                        className="flex-1 bg-green-600 text-white py-4 rounded-xl font-bold text-base hover:bg-green-700 transition-colors disabled:opacity-50"
+                      >
+                        {saving ? '登録中...' : '商品マスタに登録'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setScanStep('preview')}
+                        className="px-5 py-4 rounded-xl border border-gray-200 text-gray-600 font-medium hover:bg-gray-50"
+                      >
+                        戻る
+                      </button>
+                    </div>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Product list */}
       {products.length === 0 ? (
         <div className="bg-white rounded-xl p-12 shadow-sm border border-gray-100 text-center text-gray-400">
           <div className="text-5xl mb-3">📦</div>
           <div className="font-medium text-lg">商品がまだ登録されていません</div>
-          <div className="text-sm mt-1">「商品追加」ボタンから登録してください</div>
+          <div className="text-sm mt-1">「商品追加」または「写真から登録」ボタンから登録してください</div>
         </div>
       ) : (
         <div className="space-y-3">
