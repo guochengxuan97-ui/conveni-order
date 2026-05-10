@@ -1,0 +1,34 @@
+[
+  {
+    "id": "vac-gw-2026",
+    "name": "GW（2026年）",
+    "dateFrom": "2026-04-29",
+    "dateTo": "2026-05-06",
+    "reductionPct": 15,
+    "note": "ゴールデンウィーク。学生不在で客足減"
+  },
+  {
+    "id": "vac-summer-2026",
+    "name": "夏休み（2026年）",
+    "dateFrom": "2026-07-20",
+    "dateTo": "2026-09-20",
+    "reductionPct": 20,
+    "note": "夏季休暇。学生の多くが帰省・旅行"
+  },
+  {
+    "id": "vac-winter-2026",
+    "name": "冬休み（2026年）",
+    "dateFrom": "2026-12-23",
+    "dateTo": "2027-01-07",
+    "reductionPct": 15,
+    "note": "冬季休暇"
+  },
+  {
+    "id": "vac-spring-2027",
+    "name": "春休み（2027年）",
+    "dateFrom": "2027-03-20",
+    "dateTo": "2027-04-07",
+    "reductionPct": 20,
+    "note": "春季休暇"
+  }
+]

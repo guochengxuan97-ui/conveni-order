@@ -1,0 +1,1136 @@
+[
+  {
+    "id": "s001",
+    "date": "2026-04-23",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 17,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s002",
+    "date": "2026-04-23",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 13,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s003",
+    "date": "2026-04-23",
+    "productId": "p3",
+    "ordered": 30,
+    "sold": 26,
+    "wasted": 3,
+    "stockout": 0
+  },
+  {
+    "id": "s004",
+    "date": "2026-04-23",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 22,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s005",
+    "date": "2026-04-23",
+    "productId": "p5",
+    "ordered": 15,
+    "sold": 13,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s006",
+    "date": "2026-04-23",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 8,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s007",
+    "date": "2026-04-23",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 10,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s008",
+    "date": "2026-04-24",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 19,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s009",
+    "date": "2026-04-24",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 14,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s010",
+    "date": "2026-04-24",
+    "productId": "p3",
+    "ordered": 30,
+    "sold": 28,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s011",
+    "date": "2026-04-24",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 23,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s012",
+    "date": "2026-04-24",
+    "productId": "p5",
+    "ordered": 15,
+    "sold": 14,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s013",
+    "date": "2026-04-24",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 9,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s014",
+    "date": "2026-04-24",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 11,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s015",
+    "date": "2026-04-25",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 20,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s016",
+    "date": "2026-04-25",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 15,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s017",
+    "date": "2026-04-25",
+    "productId": "p3",
+    "ordered": 30,
+    "sold": 30,
+    "wasted": 0,
+    "stockout": 3
+  },
+  {
+    "id": "s018",
+    "date": "2026-04-25",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 25,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s019",
+    "date": "2026-04-25",
+    "productId": "p5",
+    "ordered": 15,
+    "sold": 15,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s020",
+    "date": "2026-04-25",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 10,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s021",
+    "date": "2026-04-25",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 12,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s022",
+    "date": "2026-04-26",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 16,
+    "wasted": 3,
+    "stockout": 0
+  },
+  {
+    "id": "s023",
+    "date": "2026-04-26",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 12,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s024",
+    "date": "2026-04-26",
+    "productId": "p3",
+    "ordered": 28,
+    "sold": 24,
+    "wasted": 3,
+    "stockout": 0
+  },
+  {
+    "id": "s025",
+    "date": "2026-04-26",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 20,
+    "wasted": 3,
+    "stockout": 0
+  },
+  {
+    "id": "s026",
+    "date": "2026-04-26",
+    "productId": "p5",
+    "ordered": 14,
+    "sold": 11,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s027",
+    "date": "2026-04-26",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 7,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s028",
+    "date": "2026-04-26",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 9,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s029",
+    "date": "2026-04-27",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 19,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s030",
+    "date": "2026-04-27",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 14,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s031",
+    "date": "2026-04-27",
+    "productId": "p3",
+    "ordered": 30,
+    "sold": 29,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s032",
+    "date": "2026-04-27",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 24,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s033",
+    "date": "2026-04-27",
+    "productId": "p5",
+    "ordered": 15,
+    "sold": 14,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s034",
+    "date": "2026-04-27",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 9,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s035",
+    "date": "2026-04-27",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 11,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s036",
+    "date": "2026-04-28",
+    "productId": "p1",
+    "ordered": 18,
+    "sold": 15,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s037",
+    "date": "2026-04-28",
+    "productId": "p2",
+    "ordered": 14,
+    "sold": 11,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s038",
+    "date": "2026-04-28",
+    "productId": "p3",
+    "ordered": 25,
+    "sold": 21,
+    "wasted": 3,
+    "stockout": 0
+  },
+  {
+    "id": "s039",
+    "date": "2026-04-28",
+    "productId": "p4",
+    "ordered": 22,
+    "sold": 18,
+    "wasted": 3,
+    "stockout": 0
+  },
+  {
+    "id": "s040",
+    "date": "2026-04-28",
+    "productId": "p5",
+    "ordered": 13,
+    "sold": 10,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s041",
+    "date": "2026-04-28",
+    "productId": "p6",
+    "ordered": 9,
+    "sold": 6,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s042",
+    "date": "2026-04-28",
+    "productId": "p7",
+    "ordered": 11,
+    "sold": 8,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s043",
+    "date": "2026-04-29",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 20,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s044",
+    "date": "2026-04-29",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 15,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s045",
+    "date": "2026-04-29",
+    "productId": "p3",
+    "ordered": 30,
+    "sold": 30,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s046",
+    "date": "2026-04-29",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 25,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s047",
+    "date": "2026-04-29",
+    "productId": "p5",
+    "ordered": 15,
+    "sold": 15,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s048",
+    "date": "2026-04-29",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 10,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s049",
+    "date": "2026-04-29",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 12,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s050",
+    "date": "2026-04-30",
+    "productId": "p1",
+    "ordered": 22,
+    "sold": 21,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s051",
+    "date": "2026-04-30",
+    "productId": "p2",
+    "ordered": 16,
+    "sold": 15,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s052",
+    "date": "2026-04-30",
+    "productId": "p3",
+    "ordered": 32,
+    "sold": 31,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s053",
+    "date": "2026-04-30",
+    "productId": "p4",
+    "ordered": 27,
+    "sold": 26,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s054",
+    "date": "2026-04-30",
+    "productId": "p5",
+    "ordered": 16,
+    "sold": 15,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s055",
+    "date": "2026-04-30",
+    "productId": "p6",
+    "ordered": 11,
+    "sold": 10,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s056",
+    "date": "2026-04-30",
+    "productId": "p7",
+    "ordered": 13,
+    "sold": 12,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s057",
+    "date": "2026-05-01",
+    "productId": "p1",
+    "ordered": 25,
+    "sold": 25,
+    "wasted": 0,
+    "stockout": 3
+  },
+  {
+    "id": "s058",
+    "date": "2026-05-01",
+    "productId": "p2",
+    "ordered": 18,
+    "sold": 18,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s059",
+    "date": "2026-05-01",
+    "productId": "p3",
+    "ordered": 35,
+    "sold": 35,
+    "wasted": 0,
+    "stockout": 4
+  },
+  {
+    "id": "s060",
+    "date": "2026-05-01",
+    "productId": "p4",
+    "ordered": 30,
+    "sold": 30,
+    "wasted": 0,
+    "stockout": 3
+  },
+  {
+    "id": "s061",
+    "date": "2026-05-01",
+    "productId": "p5",
+    "ordered": 18,
+    "sold": 18,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s062",
+    "date": "2026-05-01",
+    "productId": "p6",
+    "ordered": 13,
+    "sold": 13,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s063",
+    "date": "2026-05-01",
+    "productId": "p7",
+    "ordered": 15,
+    "sold": 15,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s064",
+    "date": "2026-05-02",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 16,
+    "wasted": 3,
+    "stockout": 0
+  },
+  {
+    "id": "s065",
+    "date": "2026-05-02",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 12,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s066",
+    "date": "2026-05-02",
+    "productId": "p3",
+    "ordered": 30,
+    "sold": 25,
+    "wasted": 4,
+    "stockout": 0
+  },
+  {
+    "id": "s067",
+    "date": "2026-05-02",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 21,
+    "wasted": 3,
+    "stockout": 0
+  },
+  {
+    "id": "s068",
+    "date": "2026-05-02",
+    "productId": "p5",
+    "ordered": 15,
+    "sold": 12,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s069",
+    "date": "2026-05-02",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 7,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s070",
+    "date": "2026-05-02",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 9,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s071",
+    "date": "2026-05-03",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 19,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s072",
+    "date": "2026-05-03",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 14,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s073",
+    "date": "2026-05-03",
+    "productId": "p3",
+    "ordered": 30,
+    "sold": 28,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s074",
+    "date": "2026-05-03",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 24,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s075",
+    "date": "2026-05-03",
+    "productId": "p5",
+    "ordered": 15,
+    "sold": 14,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s076",
+    "date": "2026-05-03",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 9,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s077",
+    "date": "2026-05-03",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 11,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s078",
+    "date": "2026-05-04",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 20,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s079",
+    "date": "2026-05-04",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 15,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s080",
+    "date": "2026-05-04",
+    "productId": "p3",
+    "ordered": 30,
+    "sold": 30,
+    "wasted": 0,
+    "stockout": 3
+  },
+  {
+    "id": "s081",
+    "date": "2026-05-04",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 25,
+    "wasted": 0,
+    "stockout": 2
+  },
+  {
+    "id": "s082",
+    "date": "2026-05-04",
+    "productId": "p5",
+    "ordered": 15,
+    "sold": 15,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s083",
+    "date": "2026-05-04",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 10,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s084",
+    "date": "2026-05-04",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 12,
+    "wasted": 0,
+    "stockout": 1
+  },
+  {
+    "id": "s085",
+    "date": "2026-05-05",
+    "productId": "p1",
+    "ordered": 22,
+    "sold": 21,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s086",
+    "date": "2026-05-05",
+    "productId": "p2",
+    "ordered": 16,
+    "sold": 15,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s087",
+    "date": "2026-05-05",
+    "productId": "p3",
+    "ordered": 32,
+    "sold": 30,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s088",
+    "date": "2026-05-05",
+    "productId": "p4",
+    "ordered": 27,
+    "sold": 25,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s089",
+    "date": "2026-05-05",
+    "productId": "p5",
+    "ordered": 16,
+    "sold": 15,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s090",
+    "date": "2026-05-05",
+    "productId": "p6",
+    "ordered": 11,
+    "sold": 10,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s091",
+    "date": "2026-05-05",
+    "productId": "p7",
+    "ordered": 13,
+    "sold": 12,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s092",
+    "date": "2026-05-06",
+    "productId": "p1",
+    "ordered": 20,
+    "sold": 18,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s093",
+    "date": "2026-05-06",
+    "productId": "p2",
+    "ordered": 15,
+    "sold": 13,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s094",
+    "date": "2026-05-06",
+    "productId": "p3",
+    "ordered": 30,
+    "sold": 27,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s095",
+    "date": "2026-05-06",
+    "productId": "p4",
+    "ordered": 25,
+    "sold": 22,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s096",
+    "date": "2026-05-06",
+    "productId": "p5",
+    "ordered": 15,
+    "sold": 13,
+    "wasted": 2,
+    "stockout": 0
+  },
+  {
+    "id": "s097",
+    "date": "2026-05-06",
+    "productId": "p6",
+    "ordered": 10,
+    "sold": 8,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "s098",
+    "date": "2026-05-06",
+    "productId": "p7",
+    "ordered": 12,
+    "sold": 10,
+    "wasted": 1,
+    "stockout": 0
+  },
+  {
+    "id": "e0fbfecb-09ff-41d4-92c6-c6bd87bb4bd3",
+    "date": "2026-04-12",
+    "productId": "onigiri-all",
+    "sold": 280,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 280,
+    "markedDown": 40,
+    "markdownAmount": 0,
+    "weather": "曇り"
+  },
+  {
+    "id": "86301c49-434a-4ead-9b54-9fe1a037119e",
+    "date": "2026-04-13",
+    "productId": "onigiri-all",
+    "sold": 160,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 160,
+    "markedDown": 32,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "42fdb4c4-5a2f-4a2e-a946-c93ba4b5c0ab",
+    "date": "2026-04-14",
+    "productId": "onigiri-all",
+    "sold": 181,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 181,
+    "markedDown": 11,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "49b61c6e-68df-48e0-b0d9-83d3ab6dc98f",
+    "date": "2026-04-15",
+    "productId": "onigiri-all",
+    "sold": 178,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 178,
+    "markedDown": 1,
+    "markdownAmount": 0,
+    "weather": "曇り"
+  },
+  {
+    "id": "837448b3-bce7-4706-b2be-c73742619469",
+    "date": "2026-04-16",
+    "productId": "onigiri-all",
+    "sold": 195,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 195,
+    "markedDown": 19,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "b3f08c7e-f26e-4e6e-b482-77c8a96f0103",
+    "date": "2026-04-17",
+    "productId": "onigiri-all",
+    "sold": 182,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 182,
+    "markedDown": 42,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "17128440-1f81-453b-8752-221b4a2665d3",
+    "date": "2026-04-18",
+    "productId": "onigiri-all",
+    "sold": 273,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 273,
+    "markedDown": 25,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "1ad0577c-b351-4889-84c3-8fbe489beb44",
+    "date": "2026-04-19",
+    "productId": "onigiri-all",
+    "sold": 426,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 426,
+    "markedDown": 11,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "524195bc-f7f6-4a7c-b504-bcfa201c4ea0",
+    "date": "2026-04-20",
+    "productId": "onigiri-all",
+    "sold": 203,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 203,
+    "markedDown": 18,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "ced6f4a5-0da2-41d6-96f0-44e084087ce6",
+    "date": "2026-04-21",
+    "productId": "onigiri-all",
+    "sold": 186,
+    "wasted": 2,
+    "stockout": 0,
+    "ordered": 188,
+    "markedDown": 33,
+    "markdownAmount": 0,
+    "weather": "曇り"
+  },
+  {
+    "id": "e2bfaed6-4e12-4e5a-a72a-32095040ad70",
+    "date": "2026-04-22",
+    "productId": "onigiri-all",
+    "sold": 174,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 174,
+    "markedDown": 9,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "1260f621-a7af-4443-91ff-5ea99ba8c503",
+    "date": "2026-04-23",
+    "productId": "onigiri-all",
+    "sold": 158,
+    "wasted": 1,
+    "stockout": 0,
+    "ordered": 159,
+    "markedDown": 8,
+    "markdownAmount": 0,
+    "weather": "曇り"
+  },
+  {
+    "id": "f00e2010-a211-4e8c-a20c-61373607bbb7",
+    "date": "2026-04-24",
+    "productId": "onigiri-all",
+    "sold": 200,
+    "wasted": 3,
+    "stockout": 0,
+    "ordered": 203,
+    "markedDown": 58,
+    "markdownAmount": 0,
+    "weather": "雨"
+  },
+  {
+    "id": "fb659479-a0e7-46ad-bf82-26a31e789d03",
+    "date": "2026-04-25",
+    "productId": "onigiri-all",
+    "sold": 269,
+    "wasted": 5,
+    "stockout": 0,
+    "ordered": 274,
+    "markedDown": 40,
+    "markdownAmount": 0,
+    "weather": "曇り"
+  },
+  {
+    "id": "033490fb-53bf-434e-8ecf-518a54b3489e",
+    "date": "2026-04-26",
+    "productId": "onigiri-all",
+    "sold": 248,
+    "wasted": 1,
+    "stockout": 0,
+    "ordered": 249,
+    "markedDown": 30,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "efe9a50b-c019-4e77-99d3-ca68fe330cd7",
+    "date": "2026-04-27",
+    "productId": "onigiri-all",
+    "sold": 145,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 145,
+    "markedDown": 10,
+    "markdownAmount": 0,
+    "weather": "雨"
+  },
+  {
+    "id": "05388d25-49ef-4b58-bb9b-b6904f7c0703",
+    "date": "2026-04-28",
+    "productId": "onigiri-all",
+    "sold": 192,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 192,
+    "markedDown": 0,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  },
+  {
+    "id": "48484936-6fff-43a1-8b06-b5c2d9f89b06",
+    "date": "2026-04-29",
+    "productId": "onigiri-all",
+    "sold": 234,
+    "wasted": 12,
+    "stockout": 0,
+    "ordered": 246,
+    "markedDown": 34,
+    "markdownAmount": 0,
+    "weather": "曇り"
+  },
+  {
+    "id": "e868c7f3-2e15-49db-84ab-5add0e1a63b0",
+    "date": "2026-04-30",
+    "productId": "onigiri-all",
+    "sold": 155,
+    "wasted": 3,
+    "stockout": 0,
+    "ordered": 158,
+    "markedDown": 35,
+    "markdownAmount": 0,
+    "weather": "雨"
+  },
+  {
+    "id": "d89fc765-101e-4df0-9571-abf6b18bd599",
+    "date": "2026-05-01",
+    "productId": "onigiri-all",
+    "sold": 143,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 143,
+    "markedDown": 36,
+    "markdownAmount": 0,
+    "weather": "雨"
+  },
+  {
+    "id": "59d7a006-dfe8-43fe-93d5-cff84dfc9aa3",
+    "date": "2026-05-02",
+    "productId": "onigiri-all",
+    "sold": 281,
+    "wasted": 0,
+    "stockout": 0,
+    "ordered": 281,
+    "markedDown": 0,
+    "markdownAmount": 0,
+    "weather": "晴れ"
+  }
+]

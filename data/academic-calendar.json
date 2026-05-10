@@ -1,0 +1,77 @@
+{
+  "academicYear": 2026,
+  "fetchedAt": null,
+  "sourceUrl": "https://www.hosei.ac.jp/tama/",
+  "periods": [
+    {
+      "id": "ac-spring-term-2026",
+      "type": "class",
+      "name": "春学期授業期間",
+      "dateFrom": "2026-04-07",
+      "dateTo": "2026-07-22",
+      "orderFactor": 1.0,
+      "source": "manual",
+      "note": "通常授業日。学生来客あり"
+    },
+    {
+      "id": "ac-spring-exam-2026",
+      "type": "exam",
+      "name": "春学期試験期間",
+      "dateFrom": "2026-07-23",
+      "dateTo": "2026-08-01",
+      "orderFactor": 0.85,
+      "source": "manual",
+      "note": "試験期間。自宅学習が増え来客やや減"
+    },
+    {
+      "id": "ac-summer-2026",
+      "type": "vacation",
+      "name": "夏季休暇",
+      "dateFrom": "2026-08-02",
+      "dateTo": "2026-09-17",
+      "orderFactor": 0.75,
+      "source": "manual",
+      "note": "夏休み。学生大幅減少"
+    },
+    {
+      "id": "ac-fall-term-2026",
+      "type": "class",
+      "name": "秋学期授業期間",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2027-01-21",
+      "orderFactor": 1.0,
+      "source": "manual",
+      "note": "通常授業日"
+    },
+    {
+      "id": "ac-winter-2026",
+      "type": "vacation",
+      "name": "冬季休暇",
+      "dateFrom": "2026-12-23",
+      "dateTo": "2027-01-06",
+      "orderFactor": 0.75,
+      "source": "manual",
+      "note": "冬休み。学生大幅減少"
+    },
+    {
+      "id": "ac-spring-2027",
+      "type": "vacation",
+      "name": "春季休暇",
+      "dateFrom": "2027-03-01",
+      "dateTo": "2027-04-06",
+      "orderFactor": 0.75,
+      "source": "manual",
+      "note": "春休み。学生大幅減少"
+    },
+    {
+      "id": "ac-gw-2026",
+      "type": "vacation",
+      "name": "GW休暇",
+      "dateFrom": "2026-04-29",
+      "dateTo": "2026-05-06",
+      "orderFactor": 0.80,
+      "source": "manual",
+      "note": "ゴールデンウィーク。授業期間中だが学生不在"
+    }
+  ]
+}
