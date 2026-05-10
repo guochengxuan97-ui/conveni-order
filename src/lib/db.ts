@@ -87,4 +87,23 @@ export async function initializeDatabase(): Promise<void> {
       holiday_factor REAL NOT NULL DEFAULT 0.80
     )
   `;
+
+  await sql`
+    CREATE TABLE IF NOT EXISTS users (
+      id TEXT PRIMARY KEY,
+      username TEXT NOT NULL UNIQUE,
+      password_hash TEXT NOT NULL,
+      role TEXT NOT NULL CHECK (role IN ('owner', 'manager', 'staff')),
+      created_at TEXT NOT NULL
+    )
+  `;
+}
+
+let _dbInitPromise: Promise<void> | null = null;
+
+export function ensureDb(): Promise<void> {
+  if (!_dbInitPromise) {
+    _dbInitPromise = initializeDatabase();
+  }
+  return _dbInitPromise;
 }

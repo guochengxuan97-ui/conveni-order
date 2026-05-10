@@ -1,5 +1,5 @@
 import { sql } from '@vercel/postgres';
-import { initializeDatabase } from './db';
+import { ensureDb } from './db';
 import {
   Product,
   SalesRecord,
@@ -11,14 +11,6 @@ import {
   AcademicCalendarData,
 } from './types';
 
-let initPromise: Promise<void> | null = null;
-
-async function ensureDb(): Promise<void> {
-  if (!initPromise) {
-    initPromise = initializeDatabase();
-  }
-  await initPromise;
-}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function rowToProduct(row: any): Product {
