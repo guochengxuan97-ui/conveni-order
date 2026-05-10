@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { type AuthUser, type UserRole, ROLE_LABELS } from '@/lib/auth';
+import { type AuthUser, type UserRole, ROLE_LABELS } from '@/lib/auth-shared';
 
 interface NavItem {
   href: string;

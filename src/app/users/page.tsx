@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, FormEvent } from 'react';
-import { ROLE_LABELS, type UserRole } from '@/lib/auth';
+import { ROLE_LABELS, type UserRole } from '@/lib/auth-shared';
 
 interface User {
   id: string;

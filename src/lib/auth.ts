@@ -1,21 +1,7 @@
 import { SignJWT, jwtVerify } from 'jose';
-import { cookies } from 'next/headers';
-
-export type UserRole = 'owner' | 'manager' | 'staff';
-
-export interface AuthUser {
-  id: string;
-  username: string;
-  role: UserRole;
-}
-
-export const AUTH_COOKIE = 'auth_token';
-
-export const ROLE_LABELS: Record<UserRole, string> = {
-  owner: 'オーナー',
-  manager: 'マネージャー',
-  staff: 'スタッフ',
-};
+export type { UserRole, AuthUser } from './auth-shared';
+export { AUTH_COOKIE, ROLE_LABELS } from './auth-shared';
+import type { AuthUser } from './auth-shared';
 
 function getSecret() {
   return new TextEncoder().encode(
@@ -36,18 +22,7 @@ export async function verifyToken(token: string): Promise<AuthUser | null> {
     const { payload } = await jwtVerify(token, getSecret());
     const { id, username, role } = payload as Record<string, string>;
     if (!id || !username || !role) return null;
-    return { id, username, role: role as UserRole };
-  } catch {
-    return null;
-  }
-}
-
-export async function getSession(): Promise<AuthUser | null> {
-  try {
-    const store = await cookies();
-    const token = store.get(AUTH_COOKIE)?.value;
-    if (!token) return null;
-    return verifyToken(token);
+    return { id, username, role: role as AuthUser['role'] };
   } catch {
     return null;
   }

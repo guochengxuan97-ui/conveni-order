@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
 import bcrypt from 'bcryptjs';
-import { getSession } from '@/lib/auth';
+import { getSession } from '@/lib/auth-session';
 import { ensureDb } from '@/lib/db';
 
 export async function GET() {
