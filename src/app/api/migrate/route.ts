@@ -15,7 +15,15 @@ function readJson<T>(filename: string, fallback: T): T {
   }
 }
 
-export async function POST() {
+export async function POST(req: Request) {
+  const secret = process.env.MIGRATE_SECRET;
+  if (secret) {
+    const auth = req.headers.get('authorization');
+    if (auth !== `Bearer ${secret}`) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+  }
+
   try {
     await initializeDatabase();
 
